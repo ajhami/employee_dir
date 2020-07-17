@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Searchbar from "./components/Searchbar";
 import Table from "./components/Table";
 import TableRows from "./components/TableRows"
+import Footer from './components/Footer/Footer';
 import API from "./utils/randomUserAPI";
 // import { render } from '@testing-library/react';
 
@@ -56,6 +57,7 @@ class App extends Component {
             <TableRows data={this.state.searchedData}/>
           </Table>
         </div>
+        <Footer />
       </div>
     );
   };

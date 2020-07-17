@@ -2,12 +2,12 @@
     background-color: #014cd8be;
 }
 
-.navLogoDiv {
+.navTextDiv {
     vertical-align: middle;
     text-align: center;
 }
 
-.navLogo {
-    height: 152px;
-    width: 152px;
+.navText {
+    font-size: 40px;
+    color: #67d4ff;
 }
