@@ -10,7 +10,8 @@ import API from "./utils/randomUserAPI";
 
 class App extends Component {
   state = {
-    data: []
+    fullData: [],
+    searchedData: []
   };
 
 
@@ -21,18 +22,20 @@ class App extends Component {
         let employees = res.data.results;
 
         employees = employees.map(employee => ({
+          id: employee.id.value,
           name: employee.name.first + " " + employee.name.last,
           age: employee.dob.age,
           email: employee.email,
           phoneNumber: employee.phone,
-          employeePhoto: employee.picture.thumbnail
+          employeePhoto: employee.picture.large
         }))
         // console.log(employees);
-        this.setState({ data: employees });
+        this.setState({ fullData: employees, searchedData: employees });
         // let newState = { employees };
         // return newState;
         // this.setState(newState);
-        console.log(this.state.data);
+        console.log(this.state.fullData);
+        console.log(this.state.searchedData);
       })
 
 
@@ -50,7 +53,7 @@ class App extends Component {
           <Searchbar />
           <br />
           <Table>
-            <TableRows data={this.state.data}/>
+            <TableRows data={this.state.searchedData}/>
           </Table>
         </div>
       </div>

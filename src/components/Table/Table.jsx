@@ -6,6 +6,7 @@ function Table(props) {
         <table className="table table-striped sortable">
             <thead>
                 <tr>
+                    <th scope="col">Employee ID</th>
                     <th scope="col">Name</th>
                     <th scope="col">Age</th>
                     <th scope="col">Email</th>
