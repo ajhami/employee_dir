@@ -1,6 +1,6 @@
 # Employee Directory
 
-![Project Status](https://img.shields.io/badge/status-In%20%Progress-yellow)
+![Project Status](https://img.shields.io/badge/status-In_Progress-yellow)
 ![License](https://img.shields.io/badge/License-mit-blue)
 
 ### Click [here](https://ajhami.github.io/employee_dir/) to visit deployed application.
