@@ -15,11 +15,21 @@ This Application is a simple employee directory, designed to demonstrate the imp
 - Usage
 
 ### Installation / Setup
+In order to set up this application in React, find a location in your storage to install a directory for a new React.js application. Once that location is found, run the following code in your git bash terminal, replacing {name} with a desired name for the project:
 ```git
-npm install
+npx create-react-app {app}
 ```
+In addition to the packages included with a basic React application, you will need to install axios as a dependency.
+```git
+npm install axios
+```
+Finally, take the `src` folder from this repository and copy/paste it to your new React application. You can start the application by running this in your terminal:
+```git
+npm start
+```
+
 ### Usage
-This application was built to keep track of earnings and expenses. Users simply type in the title of a transaction and the dollar amount, then select to add or subtrack funds. The transaction will then be inserted into the graphic below. This application will function both when connected to the internet and when working offline.
+Currently, this application will grab 200 entries of employee data upon loading and insert them into an organized table. There are components in place to search for employees by name, however, that functionality is currently under development as well as a sorting feature.
 
 
 
