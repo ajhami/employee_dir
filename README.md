@@ -29,7 +29,7 @@ npm start
 ```
 
 ### Usage
-Currently, this application will grab 200 entries of employee data upon loading and insert them into an organized table. There are components in place to search for employees by name, however, that functionality is currently under development as well as a sorting feature.
+Currently, this application will grab 200 entries of employee data upon loading and insert them into an organized table. The user can search for employees by name in the search bar. There's also a button attatched to the table for sorting the employees by name, however, the functionality is not yet in place for that sort.
 
 
 
