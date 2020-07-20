@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
 import './App.css';
 import Navbar from "./components/Navbar";
 import Searchbar from "./components/Searchbar";
 import Table from "./components/Table";
-import TableRows from "./components/TableRows"
 import Footer from './components/Footer/Footer';
 import API from "./utils/randomUserAPI";
-// import { render } from '@testing-library/react';
 
 class App extends Component {
   state = {
@@ -31,42 +28,24 @@ class App extends Component {
           phoneNumber: employee.phone,
           employeePhoto: employee.picture.large
         }));
-        // console.log(employees);
         this.setState({ fullData: employees, searchedData: employees });
-        // let newState = { employees };
-        // return newState;
-        // this.setState(newState);
         console.log(this.state.fullData);
         console.log(this.state.searchedData);
       })
 
   };
-
-  // let employeeData = loadEmployeeData();
-  // console.log(employeeData);
-
   
+  // This function is used solely for the purpose of preventing default for submissions
   handleFormSubmit = event => {
-    event.preventDefault();
-    console.log("Default prevented!")
-    // let fullData = this.state.fullData;
-    
-    // let searchedData = fullData.filter(employee => (employee.name).toLowerCase().includes(this.state.searchedName.toLowerCase()));
-    
-    // this.setState({ searchedData: searchedData });
-    // console.log(this.state.searchedData);
-    // console.log(searchedData);
-    
+    event.preventDefault();    
   }
   
   handleInputChange = event => {
     let searchedName = event.target.value;
     this.setState({ searchedName: searchedName});
     console.log(this.state.searchedName);
-    // return this.handleFormSubmit();
 
-    let fullData = this.state.fullData;
-    
+    let fullData = this.state.fullData;    
     let searchedData = fullData.filter(employee => (employee.name).toLowerCase().includes(searchedName.toLowerCase()));
     
     this.setState({ searchedData: searchedData });
@@ -86,9 +65,7 @@ class App extends Component {
             handleFormSubmit={this.handleFormSubmit}
           />
           <br />
-          <Table>
-            <TableRows data={this.state.searchedData}/>
-          </Table>
+          <Table data={this.state.searchedData}></Table>
         </div>
         <Footer />
       </div>
