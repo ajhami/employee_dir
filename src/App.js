@@ -12,7 +12,8 @@ import API from "./utils/randomUserAPI";
 class App extends Component {
   state = {
     fullData: [],
-    searchedData: []
+    searchedData: [],
+    searchedName: ""
   };
 
 
@@ -29,7 +30,7 @@ class App extends Component {
           email: employee.email,
           phoneNumber: employee.phone,
           employeePhoto: employee.picture.large
-        }))
+        }));
         // console.log(employees);
         this.setState({ fullData: employees, searchedData: employees });
         // let newState = { employees };
@@ -39,11 +40,40 @@ class App extends Component {
         console.log(this.state.searchedData);
       })
 
-
   };
 
   // let employeeData = loadEmployeeData();
   // console.log(employeeData);
+
+  
+  handleFormSubmit = event => {
+    event.preventDefault();
+    console.log("Default prevented!")
+    // let fullData = this.state.fullData;
+    
+    // let searchedData = fullData.filter(employee => (employee.name).toLowerCase().includes(this.state.searchedName.toLowerCase()));
+    
+    // this.setState({ searchedData: searchedData });
+    // console.log(this.state.searchedData);
+    // console.log(searchedData);
+    
+  }
+  
+  handleInputChange = event => {
+    let searchedName = event.target.value;
+    this.setState({ searchedName: searchedName});
+    console.log(this.state.searchedName);
+    // return this.handleFormSubmit();
+
+    let fullData = this.state.fullData;
+    
+    let searchedData = fullData.filter(employee => (employee.name).toLowerCase().includes(searchedName.toLowerCase()));
+    
+    this.setState({ searchedData: searchedData });
+    console.log(this.state.searchedData);
+    console.log(searchedData);
+
+  }
 
   render() {
     return (
@@ -51,7 +81,10 @@ class App extends Component {
         <Navbar />
         <br />
         <div className="container">
-          <Searchbar />
+          <Searchbar 
+            handleInputChange={this.handleInputChange}
+            handleFormSubmit={this.handleFormSubmit}
+          />
           <br />
           <Table>
             <TableRows data={this.state.searchedData}/>
